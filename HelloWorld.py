@@ -1,0 +1,5 @@
+print("This is my first python code!!!")
+print('Hello World')
+print(1+2)
+print(9*9)
+print("This is my first python code!!!",580+780,"Let's Go Brandon")
