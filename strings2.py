@@ -30,8 +30,25 @@ print(parrot[:6] + parrot[6:])
 
 print(parrot[:])
 
+#          01234567890123456789012345
 letters = "abcdefghijklmnopqrstuvwxyz"
 
 print(letters[0:9] + letters[9:18] + letters[18:27])
 
+backwards = letters[25::-1]
+print(backwards)
+backwards = letters[::-1]
+print(backwards)
 
+# Challenge - Use the letters string to do the following:
+# Create a slice that produces the characters qpo.
+# Slice the string to produce edcba.
+# Slice the string to produce the last 8 characters, in reverse order.
+
+#           01234567890123456789012345
+#letters = "abcdefghijklmnopqrstuvwxyz"
+
+print()
+print(letters[16:13:-1])
+print(letters[4:2:-1] + letters[2::-1])
+print(letters[25:17:-1])
