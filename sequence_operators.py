@@ -13,7 +13,6 @@ print("Hello " * 5)
 
 print("Hello " * (5+4))
 print("Hello " * 5 + "4")
-print("Hello " * 5 + str(4))
 
 today = "friday"
 print("day" in today)   # True
