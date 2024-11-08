@@ -1,27 +1,19 @@
 # This program takes in two strings and checks if they are anagrams
-def string_slicer(slicer):
-    # This function slices the string into its lowercase letters
-    # Declare a reference variable string
-    newSlice = ""
-    for char in slicer:
-        if(char == " "):
-            continue # Skip to the next character in the string if its an empty space
-        else:
-            newSlice = newSlice + char.lower()
-    newArray = sorted(newSlice)
-    newSlice = "".join(newArray)
-    return newSlice
+def prepare_string(word):
+    # Convert to lowercase and remove spaces
+    cleaned_word = "".join(sorted(char.lower() for char in word if char != " "))
+    return cleaned_word
 
-# Take in two words
-print("The 1st word is: ")
-word1 = string_slicer(input())
-print("The 2nd word is: ")
-word2 = string_slicer(input())
+def are_anagrams(word1, word2):
+    # Check if the processed versions of both words are identical
+    return prepare_string(word1) == prepare_string(word2)
 
-#Check if the words are identical
-if(word1 == word2):
+# Take input from the user
+word1 = input("Enter the 1st word: ")
+word2 = input("Enter the 2nd word: ")
+
+# Check if the words are anagrams and print the result
+if are_anagrams(word1, word2):
     print("The words are INDEED anagrams!!!")
-    quit()
 else:
     print("The words are NOT anagrams!!!")
-    quit()
