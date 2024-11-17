@@ -1,14 +1,22 @@
 import random
 
-# # The following are different prototypes testing out Python fundamentals
-# while loop
+
+def get_integer(prompt):
+    while True:
+        temp = input(prompt)
+        if temp.isnumeric():
+            return int(temp)
+        # else:
+        print("{0} is not a valid number".format(temp))
+
 
 highest = 1000
 answer = random.randint(1, highest)
+print(answer) # TODO: Remove after testing
 guess = 0
 print("Please guess a number between 1 and {}: ".format(highest))
 while guess != answer:
-    guess = int(input())
+    guess = get_integer(": ")
 
     if guess == answer:
         print("Well done, you've guessed it")
@@ -20,42 +28,3 @@ while guess != answer:
             print("Please guess higher")
         else:
             print("Please guess lower")
-
-
-# highest = 10
-# answer = random.randint(1,highest)
-# print(answer)   # TODO: Remove after testing
-#
-# print("Please guess number between 1 and {}: ".format(highest))
-# guess = int(input())
-#
-# if guess == answer:
-#     print("You got it the first time")
-# else:
-#     if guess < answer:
-#         print("Please guess higher")
-#     else: # guess must be greater than answer
-#         print("Please guess lower")
-#     guess = int(input())
-#     if guess == answer:
-#         print("Well done, you guessed it")
-#     else:
-#         print("Sorry, you have not guessed correctly")
-#         print(answer)
-
-# if guess < answer:
-#     print("Please guess higher")
-#     guess = int(input())
-#     if guess == answer:
-#         print("Well done, you guessed it")
-#     else:
-#         print("Sorry, you have not guessed correctly")
-# elif guess > answer:
-#     print("Please guess lower")
-#     guess = int(input())
-#     if guess == answer:
-#         print("Well done, you guessed it")
-#     else:
-#         print("Sorry, you have not guessed correctly")
-# else:
-#     print("You got it first time")
