@@ -10,3 +10,11 @@ for index in range(len(integer_list)):
 
 print(integer_list[0] + integer_list[1] - integer_list[2])
 
+# # Demonstrating strings immutability
+# tester = "Hello"
+# # yields an error
+# # tester[-1] = " "
+# # you cannot assign the string "o" a new value of "
+# # instead you must use a method or loop to assign a variation to a new var
+# new_tester = tester.replace("o", " ")
+# print(new_tester)
