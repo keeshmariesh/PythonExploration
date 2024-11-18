@@ -1,20 +1,45 @@
 # Introduction to Python Functions
 
 def multiply(x, y):
-    result = x * y
-    return result
+    """
+    Multiply 2 numbers.
+
+    Although this function is intended to multiply 2 numbers,
+    you can also use it to multiply a sequence. If you pass
+    a string, for example, as the first argument, you'll get
+    the string repeated 'y' times as the returned value.
+
+    :param x: The first number to multiply.
+    :param y: The number to multiply `x` by.
+    :return: The product of `x` and `y`.
+    """
+    return x * y
 
 
 def is_palindrome(string):
-    # backwards = string[::-1]
-    # return backwards == string
+    """
+    Check if a sentence is a palindrome.
+
+    A palindrome is a string that reads the same forwards as backwards.
+
+    :param string: The string to check.
+    :return: True if `string` is a palindrome, False otherwise.
+    """
     return string[::-1].casefold() == string.casefold()
 
 
 def palindrome_sentence(string):
+    """
+    Get a string argument by passing a value.
+
+    The function ignores whitespace, capitalisation, and
+    punctuation in the sentence.
+
+    :param string: The sentence to check.
+    :return: True if `sentence` is a palindrome, False otherwise.
+    """
     clean_string = ''.join(char for char in string
                            if char.isalnum())
-    # return clean_string[::-1] == clean_string
     return is_palindrome(clean_string)
 
 
@@ -40,9 +65,15 @@ def palindrome_sentence(string):
 # else:
 #     print("'{}' is not a palindrome".format(word))
 # Function call to check if any string is a palindrome
-sentence = input("Please enter a sentence to check: ")
-if palindrome_sentence(sentence):
-    print("The sentence is a palindrome")
-else:
-    print("The sentence is not a palindrome")
+# sentence = input("Please enter a sentence to check: ")
+# if palindrome_sentence(sentence):
+#     print("The sentence is a palindrome")
+# else:
+#     print("The sentence is not a palindrome")
 
+answer = multiply(18, 3)
+print(answer)
+
+print(multiply.__doc__)
+print(is_palindrome.__doc__)
+print(palindrome_sentence.__doc__)
