@@ -43,6 +43,21 @@ def palindrome_sentence(string):
     return is_palindrome(clean_string)
 
 
+def fibonacci(n):
+    """Return the `n` th Fibonacci number, for positive `n`."""
+    if 0 <= n <= 1:
+        return n
+    n_minus1, n_minus2 = 1, 0
+
+    result = None
+    for f in range(n - 1):
+        result = n_minus2 + n_minus1
+        n_minus2 = n_minus1
+        n_minus1 = result
+
+    return result
+
+
 # 2 blank lines after each function definition is the convention
 # Different examples of function calls below
 # Uncomment to demonstrate different functions defined above
@@ -71,9 +86,13 @@ def palindrome_sentence(string):
 # else:
 #     print("The sentence is not a palindrome")
 
-answer = multiply(18, 3)
-print(answer)
+# Print documentation; Docstrings
+# answer = multiply(18, 3)
+# print(answer)
+#
+# print(multiply.__doc__)
+# print(is_palindrome.__doc__)
+# print(palindrome_sentence.__doc__)
 
-print(multiply.__doc__)
-print(is_palindrome.__doc__)
-print(palindrome_sentence.__doc__)
+for i in range(36):
+    print(i, fibonacci(i))
