@@ -16,7 +16,7 @@ def multiply(x, y):
     return x * y
 
 
-def is_palindrome(string):
+def is_palindrome(string: str) -> bool:
     """
     Check if a sentence is a palindrome.
 
