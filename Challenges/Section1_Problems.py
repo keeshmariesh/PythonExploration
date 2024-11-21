@@ -115,8 +115,39 @@ def concatenate_strings(delimiter, *args):
 # #10 Generate all permutations: Write a program that generates all
 # the permutations of a given string.
 
+def permutator(string):
+
+    string_list = list(string)
+    permutated_list = []
+
+    for iteration in range(len(string)):
+        for num, char in enumerate(string_list):
+            if string in permutated_list:
+                return permutated_list
+            elif num == len(string_list) - 1:
+                continue
+
+            string_list[num] = string_list[num + 1]
+            string_list[num + 1] = char
+            permutated_list.append("".join(string_list))
+
+    return "".join(permutated_list)
 
 
+# #11 Checking whether a string is a palindrome: Write a program that
+# determines whether the given string is a palindrome or not.
+
+def is_palindrome(string):
+    return string[::-1].lower() == string.lower()
+
+
+# #12 Removing duplicate characters: Write a program that removes the
+# duplicate characters from the given string.
+
+
+
+
+# #13
 
 # #1
 print("Problem #1:\n")
@@ -165,5 +196,19 @@ print()
 print("Problem #9:\n")
 print(concatenate_strings("+", "Here", "is", "a",
                           "concatenated", "string!"))
+print()
 
 # #10
+print("Problem #10:\n")
+print(permutator("cat"))
+print()
+
+# #11
+print("Problem #11:\n")
+print(is_palindrome("racecar"))
+print()
+
+# #12
+print("Problem: #12\n")
+print(remove_dup_chars("ffffHdddeSSssy kkkkklLppwwwLmawwwqqqpppppwwvvvxxn"))
+print()
