@@ -26,7 +26,7 @@ def set_field(position: int) -> list:
     for i in range(total_segments):
         char = "*"
         if i == position:
-            char = "X"
+            char = "O"
         elif i % 5 == 0:
             char = "|"
 
@@ -48,7 +48,7 @@ def coin_toss():
     """Simulate a coin toss to determine initial possession."""
     print("Coin Toss! Heads or Tails?")
     choice = input("Choose Heads or Tails: ").strip().lower()
-    outcome = random.choice(["h", "t"])
+    outcome = random.choice(["heads", "tails"])
     print(f"The coin shows: {outcome.capitalize()}!")
 
     if choice == outcome:
@@ -95,7 +95,6 @@ def main():
             # Prompt user for their offensive play call.
             offensive_play_call = input("Do you want to Run, Pass, or Kick: ")
             # Clear the console screen
-            clear_screen()
             # Change game state based on offensive outcomes
             if offensive_play_call.strip().lower() == 'r':
                 gain += int(random.randint(-2,12))
@@ -149,7 +148,6 @@ def main():
             defensive_play_call = input("Do you want to load the box, drop "
                                         "back, or balanced: ")
             # Clear the console screen.
-            clear_screen()
             # Change game state based on defensive outcomes.
             if defensive_play_call.strip().lower() == 'l':
                 gain += int(random.randint(-4,7))
@@ -195,6 +193,9 @@ def main():
                     print("The kick is wide! Opponent takes the field on the {} yard line.".format(position))
                 elif position < 65:
                     position = (position + (chance // 2)) // 4
+                    possession = not possession
+                    yards_to_go = 10
+                    current_down = 1
                     print(f"The punt was returned to the {position} yard line.")
 
         # Check if either team has scored
